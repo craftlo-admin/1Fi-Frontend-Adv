@@ -6,7 +6,7 @@ Added a comprehensive loan portfolio dashboard that displays real-time metrics f
 ## Features Implemented
 
 ### 1. Dashboard Component (`Dashboard.tsx`)
-- **API Integration**: Fetches data from `GET http://localhost:5000/api/dashboard`
+- **API Integration**: Fetches data from `GET https://onefi-backend-adv.onrender.com/api/dashboard`
 - **Real-time Metrics Display**:
   - Loan Status Cards (New, Active, Closed, Active Securities)
   - Financial Overview (Sanctioned, Disbursed, Repayments, Write-offs)
@@ -61,7 +61,7 @@ Added a comprehensive loan portfolio dashboard that displays real-time metrics f
 4. **Dashboard.css**: Professional styling with dark mode support
 
 ## Usage
-1. Start the backend server at `http://localhost:5000`
+1. Start the backend server at `https://onefi-backend-adv.onrender.com`
 2. Launch the React app
 3. Click "Get Started" on the home page
 4. Dashboard will fetch and display real-time data

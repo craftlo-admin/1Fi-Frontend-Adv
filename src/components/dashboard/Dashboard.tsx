@@ -36,7 +36,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onBack, onNavigateToApplications,
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:5000/api/dashboard');
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/dashboard');
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

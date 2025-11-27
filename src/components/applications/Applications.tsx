@@ -109,7 +109,7 @@ const Applications: React.FC<ApplicationsProps> = ({ onBack }) => {
   const fetchApplications = async () => {
     try {
       setLoadingApplications(true);
-      const response = await fetch('http://localhost:5000/api/loan-applications');
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/loan-applications');
       const result = await response.json();
       if (result.success) {
         setApplications(result.data);
@@ -124,7 +124,7 @@ const Applications: React.FC<ApplicationsProps> = ({ onBack }) => {
   const fetchApplicationsByStatus = async (status: string) => {
     try {
       setLoadingApplications(true);
-      const response = await fetch(`http://localhost:5000/api/loan-applications/status/${status}`);
+      const response = await fetch(`https://onefi-backend-adv.onrender.com/api/loan-applications/status/${status}`);
       const result = await response.json();
       if (result.success) {
         setApplications(result.data);
@@ -139,7 +139,7 @@ const Applications: React.FC<ApplicationsProps> = ({ onBack }) => {
   const fetchAccounts = async () => {
     try {
       setLoadingAccounts(true);
-      const response = await fetch('http://localhost:5000/api/accounts');
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/accounts');
       const result = await response.json();
       if (result.success) {
         setAccounts(result.data);
@@ -154,7 +154,7 @@ const Applications: React.FC<ApplicationsProps> = ({ onBack }) => {
   const fetchAccountsByType = async (isCompany: boolean) => {
     try {
       setLoadingAccounts(true);
-      const response = await fetch(`http://localhost:5000/api/accounts?isCompany=${isCompany}`);
+      const response = await fetch(`https://onefi-backend-adv.onrender.com/api/accounts?isCompany=${isCompany}`);
       const result = await response.json();
       if (result.success) {
         setAccounts(result.data);
@@ -171,7 +171,7 @@ const Applications: React.FC<ApplicationsProps> = ({ onBack }) => {
       const body: any = { status: newStatus };
       if (amount) body.requested_amount = amount;
 
-      const response = await fetch(`http://localhost:5000/api/loan-applications/${id}`, {
+      const response = await fetch(`https://onefi-backend-adv.onrender.com/api/loan-applications/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
@@ -810,7 +810,7 @@ const NewApplicationModal: React.FC<{
     
     try {
       setSubmitting(true);
-      const response = await fetch('http://localhost:5000/api/loan-applications', {
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/loan-applications', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1048,7 +1048,7 @@ const NewAccountModal: React.FC<{
         payload.customer_id = formData.customer_id;
       }
 
-      const response = await fetch('http://localhost:5000/api/accounts', {
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/accounts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

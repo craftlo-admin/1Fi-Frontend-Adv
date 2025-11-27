@@ -65,7 +65,7 @@ const Collateral: React.FC<CollateralPageProps> = ({ onBack }) => {
   const fetchCollaterals = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/collaterals');
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/collaterals');
       const result = await response.json();
       if (result.success) {
         setCollaterals(result.data);
@@ -80,7 +80,7 @@ const Collateral: React.FC<CollateralPageProps> = ({ onBack }) => {
   const fetchCollateralsByStatus = async (status: string) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/api/collaterals/status/${status}`);
+      const response = await fetch(`https://onefi-backend-adv.onrender.com/api/collaterals/status/${status}`);
       const result = await response.json();
       if (result.success) {
         setCollaterals(result.data);
@@ -94,7 +94,7 @@ const Collateral: React.FC<CollateralPageProps> = ({ onBack }) => {
 
   const updateCollateral = async (id: string, data: any) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/collaterals/${id}`, {
+      const response = await fetch(`https://onefi-backend-adv.onrender.com/api/collaterals/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -649,7 +649,7 @@ const PledgeCollateralModal: React.FC<{
       const amountAtPledge = Number(formData.amount_at_pledge);
       const ltvAtPledge = Number(formData.ltv_at_pledge);
 
-      const response = await fetch('http://localhost:5000/api/collaterals', {
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/collaterals', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

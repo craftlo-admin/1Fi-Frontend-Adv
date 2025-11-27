@@ -56,7 +56,7 @@ const Repayment: React.FC<RepaymentPageProps> = ({ onBack }) => {
   const fetchAllRepayments = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/repayments');
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/repayments');
       const result = await response.json();
       if (result.success) {
         setRepayments(result.data);
@@ -77,7 +77,7 @@ const Repayment: React.FC<RepaymentPageProps> = ({ onBack }) => {
   const fetchCustomerRepayments = async (customerId: string) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/api/repayments/customer/${customerId}`);
+      const response = await fetch(`https://onefi-backend-adv.onrender.com/api/repayments/customer/${customerId}`);
       const result = await response.json();
       if (result.success) {
         setRepayments(result.data);
@@ -97,7 +97,7 @@ const Repayment: React.FC<RepaymentPageProps> = ({ onBack }) => {
   const fetchLoanRepayments = async (loanId: string) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/api/repayments/loan/${loanId}`);
+      const response = await fetch(`https://onefi-backend-adv.onrender.com/api/repayments/loan/${loanId}`);
       const result = await response.json();
       if (result.success) {
         setRepayments(result.data);
@@ -422,7 +422,7 @@ const RecordPaymentModal: React.FC<{
     
     try {
       setSubmitting(true);
-      const response = await fetch('http://localhost:5000/api/repayments', {
+      const response = await fetch('https://onefi-backend-adv.onrender.com/api/repayments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
