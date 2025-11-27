@@ -1,0 +1,376 @@
+.benefits-section {
+  padding: 6rem 2rem;
+  background: #f8f9fa;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .benefits-section {
+  background: #0f0f0f;
+}
+
+.benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefits-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.benefits-list {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.benefit-item {
+  background: white;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+body.dark-mode .benefit-item {
+  background: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a2a2a;
+}
+
+.benefit-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .benefit-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.benefit-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover .benefit-header,
+.benefit-item.expanded .benefit-header {
+  background: rgba(0, 0, 0, 0.03);
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .benefit-item:hover .benefit-header,
+body.dark-mode .benefit-item.expanded .benefit-header {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item.expanded .benefit-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.benefit-title {
+  flex: 1;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .benefit-title {
+  color: #e5e5e5;
+}
+
+.expand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .expand-icon {
+  background: #ffffff;
+  color: #000000;
+}
+
+.benefit-item.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+.benefit-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.benefit-item.expanded .benefit-description {
+  max-height: 200px;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.benefit-description p {
+  color: #666;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .benefit-description p {
+  color: #a0a0a0;
+}
+
+.comparison-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  position: sticky;
+  top: 2rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .comparison-card {
+  background: #1a1a1a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2a2a2a;
+}
+
+.comparison-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .comparison-card h3 {
+  color: #e5e5e5;
+}
+
+.comparison-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.comparison-row.header {
+  font-weight: 700;
+  color: #1a1a1a;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.comparison-cell {
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #666;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .comparison-cell {
+  color: #a0a0a0;
+}
+
+.comparison-cell:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+body.dark-mode .comparison-cell:first-child {
+  color: #e5e5e5;
+}
+
+.comparison-cell.highlight {
+  background: #000000;
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .comparison-cell.highlight {
+  background: #ffffff;
+  color: #000000;
+}
+
+.comparison-row:hover .comparison-cell {
+  background: #f8f9fa;
+}
+
+body.dark-mode .comparison-row:hover .comparison-cell {
+  background: #0f0f0f;
+}
+
+.comparison-row:hover .comparison-cell.highlight {
+  background: #333333;
+  transform: scale(1.05);
+}
+
+body.dark-mode .comparison-row:hover .comparison-cell.highlight {
+  background: #e5e5e5;
+}
+
+.testimonials {
+  margin-top: 4rem;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.testimonials h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .testimonials h3 {
+  color: #e5e5e5;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+body.dark-mode .testimonial-card {
+  background: #1a1a1a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a2a2a;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 6rem;
+  color: #000000;
+  opacity: 0.05;
+  font-family: serif;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .testimonial-card::before {
+  color: #ffffff;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-rating {
+  color: #000000;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .testimonial-rating {
+  color: #ffffff;
+}
+
+.testimonial-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .testimonial-card p {
+  color: #a0a0a0;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.testimonial-author strong {
+  color: #1a1a1a;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .testimonial-author strong {
+  color: #e5e5e5;
+}
+
+.testimonial-author span {
+  color: #666;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .testimonial-author span {
+  color: #a0a0a0;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .benefits-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .benefits-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .comparison-card {
+    position: static;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-row {
+    font-size: 0.75rem;
+  }
+
+  .comparison-cell {
+    padding: 0.5rem;
+  }
+}
